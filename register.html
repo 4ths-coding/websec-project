@@ -70,7 +70,7 @@ function validateLogin() {
                 strength: strength,
                 errors: errors,
                 };
-            }
+            
             // Example of a simple username validation
             if (username.length < 3) {
               alert("Username must be at least 3 characters long.");
@@ -98,7 +98,7 @@ function validateLogin() {
                 strengthbar.style.backgroundColor = "green";
             }
 
-            if (result.errors.length > 0 {
+            if (result.errors.length > 0) {
                 errorsElement.innerHTML = `<ul>${result.errors.map((error) => `<li>${error}</li>`).join("")}</ul>`;
             } else {
                 errorsElement.innerHTML = ""; //Clear errors
