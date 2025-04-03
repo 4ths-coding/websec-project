@@ -71,7 +71,7 @@ function checkPasswordStrength(password) {
             });
         }
 
-        function validateLogin() {
+function validateLogin() {
           let username = document.getElementById("username").value;
           let password = document.getElementById("password").value;
 
@@ -95,4 +95,4 @@ function checkPasswordStrength(password) {
 
           document.getElementById("username").value = "";
           document.getElementById("password").value = "";
-        }
+}
