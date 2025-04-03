@@ -55,3 +55,14 @@ button:hover {
     color: #d2deec;
     text-decoration: underline;
 }
+/* Patrick */
+#strengthBarContainer {
+    width: 200px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+#strengthBar {
+    height: 10px;
+    width: 0%;
+    background-color: red;
+}
