@@ -12,6 +12,10 @@
         <h2>Registration</h2>
             <input type="text" id="username" placeholder="username" required>
             <input type="password" id="password" placeholder="Password" required>
+            <div id="strengthBarContainer" style="width: 200px; border: 1px solid #ccc;">
+                <div id="strengthBar" style="height: 10px; width: 0%; background-color: red;"></div>
+            </div>
+            <div id="passwordErrors"></div>
                 <button onclick="validateLogin()">Register</button>
     
            
@@ -21,7 +25,8 @@
 function validateLogin() {
             let username = document.getElementById("username").value;
             let password = document.getElementById("password").value;
-
+            let strength = 0;
+            let errors = [];
             // Basic validation example: check if fields are not empty
             if (username === "" || password === "") {
                 alert("Please enter both username and password.");
@@ -34,66 +39,71 @@ function validateLogin() {
             // - Checking for valid username formats (e.g., email)
 
             // Example of minimal password length check
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters long.");
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
                 return;
+            } else {
+                strength++;
+            }
+            if (password.match(/[a-z]/)) {
+                strength++;
+            } else {
+                error.push("Password must contain at least one lowercase letter.");
+            }
+            if (password.match(/[A-Z]/)) {
+                strength++;
+            } else {
+                errors.push("Password must contain at least one uppercase letter.");
+            }
+            if (password.match(/[0-9]/)) {
+                strength++;
+            } else {
+                errors.push("Password must contain at least one number.");
+            }
+            if (password.match(/[^a-zA-Z0-9]/)) {
+                strength++;
+            } else {
+                errors.push("Password must contain at least one special character.");
             }
 
+            return {
+                strength: strength,
+                errors: errors,
+                };
+            }
             // Example of a simple username validation
             if (username.length < 3) {
               alert("Username must be at least 3 characters long.");
               return;
             }
 
-            // Assuming validation passed, you can proceed with registration logic
-            // For example, sending data to a server or storing it locally
             console.log("Registration successful:", { username, password });
             alert("Registration Successful!");
 
-            // Example of clearing the input fields after successful validation
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
         }
-        /*
-        explanations:
+        function displayPasswordStrengthBar(password, strengthBar, errorsElement) {
+            const result = checkPasswordStrength(password);
+            const strength = result.strength;
 
-        1. validateLogin() Function:
-        - The validateLogin() function is now defined within the <script> tag. This is where the validation logic resides.
-        - It retrieves the values entered in the username and password input fields using document.getElementById().value.
-        - It includes basic checks to ensure that both fields are not empty.
-        - It now includes a check for minimum password length, and minimum username length.
-        - It clears the input boxes after a successful validation.
-        - It provides a console log, and alert, to let the user know of a successful validation.
+            const barWidth = (strength / 5) * 100;
+            strengthBar.style.width = `${barWidth}%`;
 
-        2. Basic Validation:
-        - The if (username === "" || password === "") condition checks if either the username or password field is empty. If so, it displays an alert message and uses return to stop the function's execution.
+            if (strength <= 2) {
+                strengthBar.style.backgroundColor = "red";
+            } else if (strength <= 4) {
+                strengthBar.style.backgroundColor = "orange";
+            } else {
+                strengthbar.style.backgroundColor = "green";
+            }
 
-        3. Password Length Check:
-        - if (password.length < 6) checks if the password is less than 6 characters long. This is a common basic password strength check.
-
-        4. Username Length Check:
-        - if (username.length < 3) checks if the username is less than 3 characters long.
-        
-        5. Registration Logic (Placeholder):
-        - The console.log() and alert() lines are placeholders for your actual registration logic. In a real application, you would typically:
-            - Send the username and password to a server for processing (e.g., using fetch or XMLHttpRequest).
-            - Store the user data in a database.
-            - Handle any server responses (success, errors, etc.).
-
-        6. Clearing Input Fields:
-        - The lines document.getElementById("username").value = ""; and document.getElementById("password").value = ""; clears the input fields after a successful validation.
-
-        How to use it:
-        1.  Save the HTML: Save the code as an HTML file (e.g., registration.html).
-        2. Open in Browser: Open the HTML file in your web browser.
-        3. Enter Credentials: Enter a username and password in the input fields.
-        4. Click "Register": Click the "Register" button.
-        5. See Results:
-            - If the fields are empty or the password is too short, you'll see an alert message.
-            - If the validation passes, the console will log the username and password, and an alert will display "Registration Successful!".
-            - Add server side logic: For a real application, replace the console.log and alert with your server side logic.
-            - Add CSS: Add a registration.css file to style your page.
-        */
+            if (result.errors.length > 0 {
+                errorsElement.innerHTML = `<ul>${result.errors.map((error) => `<li>${error}</li>`).join("")}</ul>`;
+            } else {
+                errorsElement.innerHTML = ""; //Clear errors
+            }
+        }
     </script>
 
 </body>
