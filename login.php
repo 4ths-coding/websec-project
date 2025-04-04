@@ -38,10 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: comment.php"); // Redirect to comment page
             exit(); // Stop executing the script
         } else {
-            echo "Invalid credentials!"; // Wrong password
+          echo "<script>alert('Invalid credentials!'); window.location.href='index.php';</script>";
+          exit();// Wrong password
         }
     } else {
-        echo "Invalid credentials!"; // Username not found
+      echo "<script>alert('User not found!'); window.location.href='index.php';</script>";
+      exit(); // Username not found
     }
 
     $stmt->close(); // Close the prepared statement

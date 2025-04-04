@@ -1,46 +1,63 @@
 <?php
-// Database connection details
-$servername = "localhost"; // MySQL server address
-$username = "root"; // MySQL username (default is 'root' for XAMPP)
-$password = ""; // MySQL password (empty unless set)
-$dbname = "secure_db"; // Database name
+// Start of PHP logic
+$registrationSuccess = false;
 
-// Create a new MySQLi connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check if the connection failed
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error); // Stop script if error in connecting to database
-}
-
-// Check if the form was submitted using POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the username and password from the form inputs
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "secure_db";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
-    // Restrict characters to letters, numbers, and underscores using regular expression
     if (!preg_match("/^[a-zA-Z0-9_]+$/", $user) || !preg_match("/^[a-zA-Z0-9_]+$/", $pass)) {
-        die("Error: Invalid characters detected! Use only letters, numbers, and underscores.");
-    }
-
-    // Hash the password for security using bcrypt
-    $hashed_password = password_hash($pass, PASSWORD_DEFAULT); // Hashes the password before storing it
-
-    // Prepare an SQL statement to insert data securely using prepared statements
-    $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-    $stmt->bind_param("ss", $user, $hashed_password); // Bind the username and hashed password to the statement
-
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo "Registration successful! <a href='index.html'>Login here</a>"; // If successful, show a success message with a login link
+        echo "<script>alert('Error: Invalid characters! Use only letters, numbers, and underscores.');</script>";
     } else {
-        echo "Error: Username already taken."; // If the username already exists, show an error message
+        $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $user, $hashed_password);
+
+        if ($stmt->execute()) {
+            echo "<script>alert('Registration successful!'); window.location.href='index.php';</script>";
+            $registrationSuccess = true;
+        } else {
+            echo "<script>alert('Error: Username already taken.');</script>";
+        }
+        $stmt->close();
     }
 
-    $stmt->close(); // Close the prepared statement
+    $conn->close();
 }
-
-// Close the database connection
-$conn->close();
 ?>
+
+<!-- HTML Starts Here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+    <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), and underscores (_) only.</p>
+
+    <!-- Form shown only if registration not successful -->
+    <?php if (!$registrationSuccess): ?>
+    <form method="POST" action="register.php">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="index.php">Login here</a></p>
+    <?php endif; ?>
+</div>
+</body>
+</html>
