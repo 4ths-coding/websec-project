@@ -1,25 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>Finals_Websec</title>
+    <title>Secure Web App</title>
+    <script>
+        function sanitizeInput(input) {
+            return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+        function validateForm() {
+            let comment = document.getElementById("comment").value;
+            document.getElementById("comment").value = sanitizeInput(comment);
+            return true;
+        }
+    </script>
 </head>
 <body>
-    
-    <div class="login-container">
     <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-            <button onclick="validateLogin()">Login</button>
+    <form method="POST" action="login.php">
+        Username: <input type="text" name="username" required><br>
+        Password: <input type="password" name="password" required><br>
+        <input type="submit" value="Login">
+    </form>
 
-        <p class="register">Don't have an account? 
-            <a href="#" onclick="window.location.href='register.html'">Register Here</a>
-         </p>
-    </div>
-
-
-
+    <h2>Comment Section</h2>
+    <form method="POST" action="comment.php" onsubmit="return validateForm()">
+        <textarea id="comment" name="comment" required></textarea><br>
+        <input type="submit" value="Post Comment">
+    </form>
 </body>
 </html>

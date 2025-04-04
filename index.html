@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all devices -->
-    <title>Register</title> <!-- Sets the browser tab title to 'Register' -->
+    <title>Login</title> <!-- Sets the browser tab title -->
     <link rel="stylesheet" href="style.css"> <!-- Links an external CSS file for styling -->
 </head>
 <body>
-    <div class="container"> <!-- Main container for the registration form -->
+    <div class="container"> <!-- Main container for the login form -->
 
-        <h2>Register</h2> <!-- Page heading -->
+        <h2>Login</h2> <!-- Page heading -->
 
         <!-- Informational text for users about allowed characters -->
         <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), and underscores (_) only.</p>
 
-        <!-- Form starts here. Data will be sent to register.php using POST method -->
-        <form method="POST" action="register.php">
+        <!-- Form starts here. Data will be sent to login.php using POST method -->
+        <form method="POST" action="login.php">
 
             <!-- Username input field -->
             <input type="text" name="username" placeholder="Username" required>
@@ -36,15 +36,15 @@
             -->
 
             <!-- Submit button -->
-            <input type="submit" value="Register">
+            <input type="submit" value="Login">
             <!-- 
                 type="submit" - button submits the form
-                value="Register" - text displayed on the button
+                value="Login" - text displayed on the button
             -->
         </form>
 
-        <!-- Link to the login page -->
-        <p>Already have an account? <a href="index.html">Login here</a></p>
+        <!-- Link to the registration page -->
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
 
     </div> <!-- End of container div -->
 </body>
