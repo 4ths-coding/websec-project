@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- Declares the document type as HTML5 -->
+<html lang="en"> <!-- Opens the HTML document with English as the language -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all devices -->
+    <title>Register</title> <!-- Sets the browser tab title to 'Register' -->
+    <link rel="stylesheet" href="style.css"> <!-- Links an external CSS file for styling -->
+</head>
+<body>
+    <div class="container"> <!-- Main container for the registration form -->
+
+        <h2>Register</h2> <!-- Page heading -->
+
+        <!-- Informational text for users about allowed characters -->
+        <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), and underscores (_) only.</p>
+
+        <!-- Form starts here. Data will be sent to register.php using POST method -->
+        <form method="POST" action="register.php">
+
+            <!-- Username input field -->
+            <input type="text" name="username" placeholder="Username" required>
+            <!-- 
+                type="text" - standard text input
+                name="username" - name used to reference this input in PHP
+                placeholder="Username" - hint text inside the input
+                required - prevents form submission if left empty
+            -->
+
+            <!-- Password input field -->
+            <input type="password" name="password" placeholder="Password" required>
+            <!-- 
+                type="password" - hides text input with dots/bullets
+                name="password" - name used to reference this input in PHP
+                placeholder="Password" - hint text inside the input
+                required - field must be filled out
+            -->
+
+            <!-- Submit button -->
+            <input type="submit" value="Register">
+            <!-- 
+                type="submit" - button submits the form
+                value="Register" - text displayed on the button
+            -->
+        </form>
+
+        <!-- Link to the login page -->
+        <p>Already have an account? <a href="index.html">Login here</a></p>
+
+    </div> <!-- End of container div -->
+</body>
+</html>
