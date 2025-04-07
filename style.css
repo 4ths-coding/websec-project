@@ -12,8 +12,18 @@ body {
     background-repeat: no-repeat;
     background: rgba(0, 0, 0, 0.5); /* Adjust the opacity to darken */
     z-index: -1; /* Ensure it stays behind content */
+    
 }
 
+
+.fredoka {
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300px;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
 /* Form container styling */
 .container {
     
@@ -34,7 +44,7 @@ h2 {
 /* Disclaimer text */
 p {
     font-size: 14px;
-    color: #d73434;
+    color: #ffffff;
 }
 
 /* Input field styles */
