@@ -7,6 +7,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image:url(img/759475-hd-wallpaper-cyber-security.jpg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Form container styling */
@@ -41,7 +44,7 @@ input[type="text"], input[type="password"] {
 
 /* Submit button styles */
 input[type="submit"] {
-    background-color: #007BFF;
+    background-color: #dd872b;
     color: white;
     padding: 10px;
     border: none;
