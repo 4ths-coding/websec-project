@@ -20,6 +20,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 /* Heading styles */
@@ -44,7 +46,7 @@ input[type="text"], input[type="password"] {
 
 /* Submit button styles */
 input[type="submit"] {
-    background-color: #e64114;
+    background-color: #4c24f0;
     color: white;
     padding: 10px;
     border: none;
