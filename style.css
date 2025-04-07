@@ -10,7 +10,7 @@ body {
     background-image:url(img/759475-hd-wallpaper-cyber-security.jpg) ;
     background-size: cover;
     background-repeat: no-repeat;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity to darken */
+    
     z-index: -1; /* Ensure it stays behind content */
     
 }
