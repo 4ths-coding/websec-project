@@ -54,8 +54,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <div class="container">
-    <h2>Login</h2>
+    <h2>LOGIN</h2>
     <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), and underscores (_) only.</p>
 
     <!-- Show error alert if login fails -->
