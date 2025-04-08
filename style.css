@@ -35,7 +35,7 @@ body {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
 
-
+  
 }
 
 
@@ -44,9 +44,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-h3{
-    color: rgb(255, 249, 249);
-}
+
 
 /* Disclaimer text */
 p {
@@ -56,7 +54,7 @@ p {
 
 /* Input field styles */
 input[type="text"], input[type="password"] {
-    width: 90%;
+    width: 95%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -71,20 +69,13 @@ input[type="submit"] {
     border: none;
     width: 80%;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer; 
     transition: 0.3s;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-input[type="submit"]:disabled {
-    background-color: gray;
-}
-
-input[id="comment"]{
-    margin-top: 10px;
+    background-color: #969fa9;
+    
 }
 
 /* Link styling */
@@ -96,9 +87,7 @@ a {
 a:hover {
     text-decoration: underline;
 }
-a[id="logout"]{
-  color: red;
-}
+
 textarea {
     width: 95%;
     height: 100px;
@@ -121,21 +110,3 @@ li {
     border-left: 3px solid #007BFF;
 }
 
-/* Patrick & Richard CSS styles for password strength checker */
-
-#password-strength {
-    margin-top: 5px;
-    font-size: 0.9em;
-}
-.weak { color: red; }
-.medium { color: orange; }
-.strong { color: green; }
-#strengthBar {
-    height: 5px;
-    background-color: gray;
-    margin-top: 5px; /* Adjust this value */
-    margin-bottom: 10px; /* Add bottom margin if needed */
-    width: 100%; /* Match input width */
-    border-radius: 5px; /* Optional: match input border-radius */
-    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
