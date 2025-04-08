@@ -46,18 +46,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 <div class="container">
-    <h2>REGISTER</h2>
+    <h2>Register</h2>
     <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), and underscores (_) only.</p>
 
     <!-- Form shown only if registration not successful -->
     <?php if (!$registrationSuccess): ?>
     <form method="POST" action="register.php">
         <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Register">
+        <input type="password" name="password" id="password" placeholder="Password" required>
+        <div id="password-strength"></div> <!-- Patrick & Richard view div#password-strength -->
+        <div id="strengthBar"></div>    <!-- Patrick & Richard view div#strengthBar -->
+        <input type="submit" value="Register" disabled id="register">
     </form>
     <p>Already have an account? <a href="index.php">Login here</a></p>
     <?php endif; ?>
 </div>
+    <script src="script.js"></script> <!-- Patrick & Richard link to script.js -->
 </body>
 </html>
