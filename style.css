@@ -1,6 +1,6 @@
 /* Apply styles to the entire page */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -10,41 +10,45 @@ body {
     background-image:url(img/1619054.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-
+        font-family: "Nunito Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: normal;
+        font-style:bold;
+        
 
 
 }
 
 
-.fredoka {
-    font-family: "Fredoka", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300px;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  }
+
 /* Form container styling */
 .container {
 
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     width: 350px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background: rgba(143, 185, 205, 0.051);
+    backdrop-filter: blur(8px);
 
-  
+
 }
 
 
 /* Heading styles */
 h2 {
     margin-bottom: 10px;
+    color: #60B5FF;
+  font-family: "Prompt", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
 }
 
-
+h3{
+    color: rgb(255, 249, 249);
+}
 
 /* Disclaimer text */
 p {
@@ -52,33 +56,56 @@ p {
     color: #ffffff;
 }
 
+.container p:hover {
+    font-size: 14px;
+    color: #2c672b;
+    text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.6),
+        0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+
+
 /* Input field styles */
 input[type="text"], input[type="password"] {
-    width: 95%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 
 /* Submit button styles */
 input[type="submit"] {
-    background-color: #21125e;
+    background-color: #007BFF;
     color: white;
     padding: 10px;
     border: none;
-    width: 80%;
-    border-radius: 5px;
-    cursor: pointer; 
+    width: 30%;
+    border-radius: 20px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-input[type="submit"]:hover {
-    background-color: #ffffff;
+#login:hover, #register:not(:disabled):hover{
+    background-color: #2948ac;
+    box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.4);
+}
+    /*  */  
+
     
+
+input[type="submit"]:disabled {
+    background-color: gray;
 }
 
-/* Link styling */
+input[id="comment"]{
+    margin-top: 10px;
+}
+
+/* Link styling () */
 a {
     text-decoration: none;
     color: #007BFF;
@@ -86,8 +113,11 @@ a {
 
 a:hover {
     text-decoration: underline;
+    color: #4de2f9;
 }
-
+a[id="logout"]{
+  color: red;
+}
 textarea {
     width: 95%;
     height: 100px;
@@ -110,3 +140,21 @@ li {
     border-left: 3px solid #007BFF;
 }
 
+/* Patrick & Richard CSS styles for password strength checker */
+
+#password-strength {
+    margin-top: 5px;
+    font-size: 0.9em;
+}
+.weak { color: red; }
+.medium { color: orange; }
+.strong { color: green; }
+#strengthBar {
+    height: 5px;
+    background-color: gray;
+    margin-top: 5px; /* Adjust this value */
+    margin-bottom: 10px; /* Add bottom margin if needed */
+    width: 100%; /* Match input width */
+    border-radius: 5px; /* Optional: match input border-radius */
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
