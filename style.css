@@ -79,6 +79,16 @@ input[type="text"], input[type="password"] {
     border-radius: 20px;
 }
 
+input[type="text"]:hover,
+input[type="password"]:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+    border-color: #60B5FF;     /* Optional: change border color */
+    box-shadow: 0 0 8px rgba(96, 181, 255, 0.6); /* Optional: glowing effect */
+    transition: 0.3s ease;
+}
+
+
+
 /* Submit button styles */
 input[type="submit"] {
     background-color: #007BFF;
