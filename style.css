@@ -58,7 +58,7 @@ p {
 
 .container p:hover {
     font-size: 14px;
-    color: #2c672b;
+    color: #44d542;
     text-shadow:
         0 0 8px rgba(255, 255, 255, 0.6),
         0 0 15px rgba(255, 255, 255, 0.4);
