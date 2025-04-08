@@ -64,13 +64,19 @@ $result = $conn->query("SELECT username, comment, created_at FROM comments ORDER
         <!-- Informational text for users about allowed characters in the comment -->
         <p><strong>Allowed characters:</strong> Letters (A-Z, a-z), numbers (0-9), spaces, periods (.), commas (,), exclamation marks (!), and question marks (?).</p>
 
-        <!-- Comment submission form -->
-        <form method="POST" action="comment.php">
-            <!-- Textarea for entering comments -->
-            <textarea name="comment" placeholder="Write your comment here..." required></textarea>
-            <!-- Submit button to post the comment -->
-            <input type="submit" value="Post Comment">
+        <form method="POST" action="comment.php" id="commentForm">
+          <textarea name="comment" id="commentInput" placeholder="Write your comment here..." required></textarea>
+          <input type="submit" value="Post Comment" id="comment">
         </form>
+
+        <script>
+        document.getElementById("commentInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault(); // Prevent newline
+                document.getElementById("commentForm").submit(); // Submit the form
+            }
+        });
+        </script>
 
         <h3>Comments:</h3>
         <!-- Display existing comments -->
@@ -85,7 +91,7 @@ $result = $conn->query("SELECT username, comment, created_at FROM comments ORDER
         </ul>
 
         <!-- Logout link -->
-        <a href="logout.php">Logout</a>
+        <a href="logout.php" id="logout">Logout</a>
     </div>
 </body>
 </html>

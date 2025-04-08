@@ -23,13 +23,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $user, $hashed_password);
 
-        if ($stmt->execute()) {
-            echo "<script>alert('Registration successful!'); window.location.href='index.php';</script>";
-            $registrationSuccess = true;
-        } else {
-            echo "<script>alert('Error: Username already taken.');</script>";
+        try {
+            // Prepare your statement and execute it
+            if ($stmt->execute()) {
+                echo "<script>alert('Registration successful!'); window.location.href='index.php';</script>";
+                $registrationSuccess = true;
+            } else {
+                if (mysqli_errno($conn) == 1062) {  // 1062 is the error code for duplicate entry
+                    echo "<script>alert('Error: Username already taken.');</script>";
+                } else {
+                    echo "<script>alert('An error occurred.');</script>";
+                }
+            }
+        } catch (mysqli_sql_exception $e) {
+            // Catch any SQL errors here
+            echo "<script>alert('Error: An unexpected error occurred.');</script>";
+        } finally {
+            $stmt->close();
         }
-        $stmt->close();
     }
 
     $conn->close();

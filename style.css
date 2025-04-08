@@ -79,6 +79,14 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+input[type="submit"]:disabled {
+    background-color: gray;
+}
+
+input[id="comment"]{
+    margin-top: 10px;
+}
+
 /* Link styling */
 a {
     text-decoration: none;
@@ -88,7 +96,9 @@ a {
 a:hover {
     text-decoration: underline;
 }
-
+a[id="logout"]{
+  color: red;
+}
 textarea {
     width: 95%;
     height: 100px;
@@ -125,7 +135,7 @@ li {
     background-color: gray;
     margin-top: 5px; /* Adjust this value */
     margin-bottom: 10px; /* Add bottom margin if needed */
-    width: 95%; /* Match input width */
+    width: 100%; /* Match input width */
     border-radius: 5px; /* Optional: match input border-radius */
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
