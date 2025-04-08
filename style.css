@@ -44,6 +44,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+h3{
+    color: rgb(255, 249, 249);
+}
+
 /* Disclaimer text */
 p {
     font-size: 14px;
@@ -107,8 +111,3 @@ li {
     border-left: 3px solid #007BFF;
 }
 
-/* Make disclaimers look more readable */
-p {
-    font-size: 14px;
-    color: #555;
-}
