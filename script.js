@@ -43,10 +43,13 @@ function displayPasswordStrengthBar(password, strengthBarElement, strengthTextEl
         strengthBarElement.style.width = `${barWidth}%`;
         if (strength <= 9) {
             strengthBarElement.style.backgroundColor = "red";
+            strengthBarElement.style.boxShadow = "0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.5)";
         } else if (strength <= 12) {
             strengthBarElement.style.backgroundColor = "orange";
+            strengthBarElement.style.boxShadow = "0 0 10px rgba(255, 165, 0, 0.8), 0 0 20px rgba(255, 165, 0, 0.5)";
         } else {
             strengthBarElement.style.backgroundColor = "green";
+            strengthBarElement.style.boxShadow = "0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.5)";
         }
     }
 

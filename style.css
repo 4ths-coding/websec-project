@@ -29,11 +29,15 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     width: 350px;
     text-align: center;
-    background: rgba(143, 185, 205, 0.051);
-    backdrop-filter: blur(8px);
+    background: rgba(56, 71, 78, 0.149);
+    backdrop-filter: blur(5px);
+    
+
 
 
 }
+
+
 
 
 /* Heading styles */
@@ -55,10 +59,10 @@ p {
     font-size: 14px;
     color: #ffffff;
 }
-
+/* Disclamer hover */
 .container p:hover {
     font-size: 14px;
-    color: #44d542;
+    color: #68fba1;
     text-shadow:
         0 0 8px rgba(255, 255, 255, 0.6),
         0 0 15px rgba(255, 255, 255, 0.4);
@@ -85,9 +89,10 @@ input[type="submit"] {
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
+    
 }
 
-#login:hover, #register:not(:disabled):hover{
+ #Login:hover, #register:not(:disabled):hover{
     background-color: #2948ac;
     box-shadow:
     0 0 8px rgba(255, 255, 255, 0.6),
@@ -146,9 +151,20 @@ li {
     margin-top: 5px;
     font-size: 0.9em;
 }
-.weak { color: red; }
+/* .weak { color: red;
+ }
 .medium { color: orange; }
-.strong { color: green; }
+.strong { color: green; } */
+.glow-red {
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 0, 0, 0.5);
+}
+.glow-orange {
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.8), 0 0 16px rgba(255, 165, 0, 0.5);
+}
+.glow-green {
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8), 0 0 16px rgba(0, 255, 0, 0.5);
+}
+
 #strengthBar {
     height: 5px;
     background-color: gray;
@@ -157,4 +173,5 @@ li {
     width: 100%; /* Match input width */
     border-radius: 5px; /* Optional: match input border-radius */
     transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    
 }

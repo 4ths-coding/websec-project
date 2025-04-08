@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form method="POST" action="login.php">
         <input type="text" name="username" placeholder="Username" title="Letters (A-Z, a-z), numbers (0-9), and underscores (_) only." required>
         <input type="password" name="password" placeholder="Password" title="Letters (A-Z, a-z), numbers (0-9), and underscores (_) only." required>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" id="Login">
     </form>
 
     <p>Don't have an account? <a href="register.php">Register here</a></p>
