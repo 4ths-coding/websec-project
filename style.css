@@ -165,6 +165,11 @@ li {
  }
 .medium { color: orange; }
 .strong { color: green; } */
+
+#password-strength.weak { color: red; }
+#password-strength.medium { color: orange; }
+#password-strength.strong { color: green; }
+
 .glow-red {
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 0, 0, 0.5);
 }
