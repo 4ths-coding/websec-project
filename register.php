@@ -63,8 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Form shown only if registration not successful -->
     <?php if (!$registrationSuccess): ?>
     <form method="POST" action="register.php">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="text" name="username" placeholder="Username" title="Letters (A-Z, a-z), numbers (0-9), and underscores (_) only." pattern="^[A-Za-z0-9_]+$" required>
+        <input type="password" name="password" id="password" placeholder="Password" title="Letters (A-Z, a-z), numbers (0-9), and underscores (_) only." pattern="^[A-Za-z0-9_]+$" required>
         <div id="password-strength"></div> <!-- Patrick & Richard view div#password-strength -->
         <div id="strengthBar"></div>    <!-- Patrick & Richard view div#strengthBar -->
         <input type="submit" value="Register" disabled id="register">
