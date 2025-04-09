@@ -167,28 +167,28 @@ li {
 .strong { color: green; } */
 
 #password-strength.weak {
-    color: red;
+    color: white;
     text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
 #password-strength.medium {
-    color: orange;
+    color: white;
     text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 0 0 10px rgba(255, 165, 0, 0.5);
 }
 
 #password-strength.strong {
-    color: green;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.5);
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(121, 255, 80, 0.874);
 }
 
 .glow-red {
-    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 8px rgba(255, 49, 49, 0.984), 0 0 16px rgba(255, 0, 0, 0.5);
 }
 .glow-orange {
-    box-shadow: 0 0 8px rgba(255, 165, 0, 0.8), 0 0 16px rgba(255, 165, 0, 0.5);
+    box-shadow: 0 0 8px rgba(255, 166, 0, 0.996), 0 0 16px rgba(255, 165, 0, 0.5);
 }
 .glow-green {
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8), 0 0 16px rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8), 0 0 16px rgba(144, 246, 144, 0.575);
 }
 
 #strengthBar {
