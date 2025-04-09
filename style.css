@@ -166,9 +166,20 @@ li {
 .medium { color: orange; }
 .strong { color: green; } */
 
-#password-strength.weak { color: red; }
-#password-strength.medium { color: orange; }
-#password-strength.strong { color: green; }
+#password-strength.weak {
+    color: red;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#password-strength.medium {
+    color: orange;
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+#password-strength.strong {
+    color: green;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.8), 0 0 10px rgba(0, 255, 0, 0.5);
+}
 
 .glow-red {
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 16px rgba(255, 0, 0, 0.5);
