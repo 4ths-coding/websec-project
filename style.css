@@ -107,19 +107,24 @@ input[type="submit"] {
 
 input[type="submit"]:disabled {
     background-color: gray;
-    
-    
 }
 
 input[id="comment"]{
     margin-top: 10px;
 }
-
+/* comment.php */
 #comment:hover{
     box-shadow:
     0 0 8px rgba(255, 255, 255, 0.6),
     0 0 15px rgba(255, 255, 255, 0.4);
 }
+#commentInput:hover {
+    background-color: #f0f8ff; /* Light blue background on hover */
+    border-color: #60B5FF;     /* Optional: change border color */
+    box-shadow: 0 0 8px rgba(96, 181, 255, 0.6); /* Optional: glowing effect */
+    transition: 0.3s ease;
+}
+
 
 /* Link styling () */
 a {
@@ -133,6 +138,14 @@ a:hover {
 }
 a[id="logout"]{
   color: red;
+  
+}
+
+#logout:hover{
+    color: rgb(255, 95, 95);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.8),
+                 0 0 10px rgba(255, 0, 0, 0.6),
+                 0 0 20px rgba(255, 0, 0, 0.5);
 }
 textarea {
     width: 95%;
